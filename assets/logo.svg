@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- RigVibe: Spektrumkurve mit Signalspitze ueber einem Wasserfall, Abstrahlung an der Spitze -->
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#16244a"/>
+      <stop offset="1" stop-color="#060b18"/>
+    </linearGradient>
+    <linearGradient id="wf" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#0b2a6b"/>
+      <stop offset=".3" stop-color="#0e5fa8"/>
+      <stop offset=".5" stop-color="#22c7f0"/>
+      <stop offset=".7" stop-color="#0e5fa8"/>
+      <stop offset="1" stop-color="#0b2a6b"/>
+    </linearGradient>
+    <linearGradient id="streak" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fff3b0"/>
+      <stop offset=".35" stop-color="#ffb02e"/>
+      <stop offset=".75" stop-color="#ff4fd8"/>
+      <stop offset="1" stop-color="#ff4fd8" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="fill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#5ce1ff" stop-opacity=".45"/>
+      <stop offset="1" stop-color="#5ce1ff" stop-opacity="0"/>
+    </linearGradient>
+    <clipPath id="tile"><rect x="2" y="2" width="60" height="60" rx="14"/></clipPath>
+    <filter id="soft" x="-80%" y="-10%" width="260%" height="120%"><feGaussianBlur stdDeviation=".7"/></filter>
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="1.4" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <rect x="2" y="2" width="60" height="60" rx="14" fill="url(#bg)"/>
+  <g clip-path="url(#tile)">
+    <!-- Wasserfall: Zeilen, die nach unten verblassen, in der Mitte die Spur des Signals -->
+    <g opacity=".9">
+      <rect x="2" y="37" width="60" height="4" fill="url(#wf)" opacity=".95"/>
+      <rect x="2" y="42" width="60" height="4" fill="url(#wf)" opacity=".7"/>
+      <rect x="2" y="47" width="60" height="4" fill="url(#wf)" opacity=".5"/>
+      <rect x="2" y="52" width="60" height="4" fill="url(#wf)" opacity=".32"/>
+      <rect x="2" y="57" width="60" height="5" fill="url(#wf)" opacity=".18"/>
+    </g>
+    <rect x="29" y="36" width="6" height="27" rx="3" fill="url(#streak)" filter="url(#soft)"/>
+    <rect x="15" y="37" width="3" height="20" rx="1.5" fill="#7ff0ff" opacity=".45" filter="url(#soft)"/>
+    <rect x="46" y="42" width="2.4" height="14" rx="1.2" fill="#7ff0ff" opacity=".3" filter="url(#soft)"/>
+    <!-- Flaeche unter der Kurve -->
+    <path d="M2 35 L8 34 L12 31.5 L16 34 L20 30.5 L24 33 L27.5 29.5 L32 10 L36.5 29.5 L40 33 L44 30.5 L48 34 L52 31.5 L56 34 L62 35 L62 36 L2 36 Z" fill="url(#fill)"/>
+  </g>
+  <!-- Spektrumkurve mit Signalspitze -->
+  <path d="M7 34 L12 31.5 L16 34 L20 30.5 L24 33 L27.5 29.5 L32 10 L36.5 29.5 L40 33 L44 30.5 L48 34 L52 31.5 L57 34" fill="none" stroke="#7ff0ff" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" filter="url(#glow)"/>
+  <!-- Abstrahlung an der Spitze -->
+  <path d="M23.5 12.5a11 11 0 0 1 4-5.5" fill="none" stroke="#ffb02e" stroke-width="2.6" stroke-linecap="round"/>
+  <path d="M40.5 12.5a11 11 0 0 0 -4-5.5" fill="none" stroke="#ffb02e" stroke-width="2.6" stroke-linecap="round"/>
+  <path d="M18.5 15a17 17 0 0 1 6.5-10" fill="none" stroke="#ffb02e" stroke-width="2.4" stroke-linecap="round" opacity=".55"/>
+  <path d="M45.5 15a17 17 0 0 0 -6.5-10" fill="none" stroke="#ffb02e" stroke-width="2.4" stroke-linecap="round" opacity=".55"/>
+  <circle cx="32" cy="10" r="2.3" fill="#ffffff"/>
+</svg>
