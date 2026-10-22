@@ -83,3 +83,7 @@ footer { border-top: 1px solid var(--line); padding: 28px clamp(16px, 5vw, 64px)
 @media (max-width: 560px) {
   .nav nav a:not(.btn) { display: none; }
 }
+
+/* Hinweis Alpha-Testphase */
+.alpha { margin-top: 14px; padding: 10px 14px; border: 1px solid #ff8a2a; border-radius: 10px; background: rgba(255,138,42,.10); font-size: 15px; line-height: 1.45; }
+.alpha a { color: inherit; text-decoration: underline; }
