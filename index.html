@@ -36,7 +36,7 @@
       <p class="alpha"><b>Alpha-Testphase:</b> RigVibe ist neu und wächst mit seinen Nutzern. Wir sind auf deine Tests und Rückmeldungen angewiesen – <a href="https://github.com/djamplifier/rigvibe/issues">Fehler melden</a> oder Mail an <a href="mailto:info@rigvibe.de">info@rigvibe.de</a>.</p>
     </div>
     <figure class="video">
-      <video controls preload="metadata" playsinline poster="assets/video/poster-rigvibe.jpg?v=5">
+      <video controls muted preload="metadata" playsinline poster="assets/video/poster-rigvibe.jpg?v=5">
         <source src="assets/video/rigvibe-rigvibe.mp4?v=5" type="video/mp4">
       </video>
     </figure>
@@ -62,7 +62,7 @@
   </section>
 
   <section id="quansheng" class="block split">
-    <figure class="video"><video controls preload="none" playsinline poster="assets/video/poster-quansheng.jpg?v=5"><source src="assets/video/rigvibe-quansheng.mp4?v=5" type="video/mp4"></video></figure>
+    <figure class="video"><video controls muted preload="none" playsinline poster="assets/video/poster-quansheng.jpg?v=5"><source src="assets/video/rigvibe-quansheng.mp4?v=5" type="video/mp4"></video></figure>
     <div>
       <h2>Quansheng UV-K1 und UV-K5 V3</h2>
       <p>Mit der RigVibe-Firmware wird das Handfunkgerät zur Digitalstation – gesteuert über ein einziges USB-C-Kabel, ganz ohne Soundkarte.</p>
@@ -88,7 +88,7 @@
       </ul>
       <a class="btn ghost" href="https://dm5mn.com/?p=289">Zum Notfunk-Artikel</a>
     </div>
-    <figure class="video"><video controls preload="none" playsinline poster="assets/video/poster-notfunk.jpg?v=5"><source src="assets/video/rigvibe-notfunk.mp4?v=5" type="video/mp4"></video></figure>
+    <figure class="video"><video controls muted preload="none" playsinline poster="assets/video/poster-notfunk.jpg?v=5"><source src="assets/video/rigvibe-notfunk.mp4?v=5" type="video/mp4"></video></figure>
   </section>
 
   <section id="download" class="block">
@@ -123,6 +123,33 @@ fetch("https://api.github.com/repos/djamplifier/rigvibe/releases/latest").then(r
   });
   if (v) document.querySelectorAll(".ver").forEach(e => e.textContent = "Version " + v);
 }).catch(() => {});
+
+// Videos starten stumm, sobald sie ins Bild kommen (Browser erlauben ohne Klick keinen Ton), und halten beim Wegscrollen an.
+// "Ton an" startet das Video mit Ton von vorn. Wer selbst anhaelt, bekommt kein automatisches Weiterspielen.
+(() => {
+  const vids = [...document.querySelectorAll("figure.video video")];
+  const still = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  vids.forEach(v => {
+    const b = document.createElement("button");
+    b.className = "unmute"; b.type = "button"; b.textContent = "🔊 Ton an";
+    v.parentElement.appendChild(b);
+    b.onclick = () => {
+      vids.forEach(o => { if (o !== v) o.pause(); });
+      v.muted = false; v.currentTime = 0; v.dataset.user = ""; v.play(); b.hidden = true;
+    };
+    v.addEventListener("volumechange", () => { b.hidden = !v.muted; });
+    v.addEventListener("pause", () => { if (!v.dataset.auto && !v.ended) v.dataset.user = "1"; delete v.dataset.auto; });
+    v.addEventListener("play", () => { delete v.dataset.user; vids.forEach(o => { if (o !== v && !o.paused) { o.dataset.auto = "1"; o.pause(); } }); });
+  });
+  if (still || !("IntersectionObserver" in window)) return;
+  const io = new IntersectionObserver(es => es.forEach(e => {
+    const v = e.target;
+    if (e.isIntersecting && e.intersectionRatio >= 0.6) {
+      if (v.paused && !v.dataset.user && !v.ended) v.play().catch(() => {});
+    } else if (!v.paused) { v.dataset.auto = "1"; v.pause(); }
+  }), {threshold: [0, 0.6]});
+  vids.forEach(v => io.observe(v));
+})();
 </script>
 </body>
 </html>
