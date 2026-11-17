@@ -3,23 +3,25 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>RigVibe – Stationssoftware für Funkamateure</title>
-<meta name="description" content="RigVibe: Funkgerät, Wasserfall, Digitalbetrieb, Logbuch, Quansheng UV-K1/K5 und Notfunk in einem Programm. Kostenlos für Windows, Mac und Linux.">
+<title data-en="RigVibe – station software for radio amateurs">RigVibe – Stationssoftware für Funkamateure</title>
+<meta name="description" content="RigVibe: Funkgerät, Wasserfall, Digitalbetrieb, Logbuch, Quansheng UV-K1/K5, sBitx und Notfunk in einem Programm. Kostenlos für Windows, Mac, Linux und Raspberry Pi." data-en-content="RigVibe: radio control, waterfall, digital modes, logbook, Quansheng UV-K1/K5, sBitx and emergency traffic in one program. Free for Windows, Mac, Linux and Raspberry Pi.">
 <meta property="og:title" content="RigVibe – Stationssoftware für Funkamateure">
-<meta property="og:description" content="Funkgerät, Wasserfall, Digitalbetrieb, Logbuch, Quansheng und Notfunk in einem Programm – kostenlos für Windows, Mac und Linux.">
+<meta property="og:description" content="Funkgerät, Wasserfall, Digitalbetrieb, Logbuch, Quansheng, sBitx und Notfunk in einem Programm – kostenlos für Windows, Mac, Linux und Raspberry Pi.">
 <meta property="og:image" content="https://rigvibe.de/assets/video/poster-rigvibe.jpg?v=6">
 <meta property="og:url" content="https://rigvibe.de/">
 <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
-<link rel="stylesheet" href="assets/site.css">
+<link rel="stylesheet" href="assets/site.css?v=2">
 </head>
 <body>
 <header class="nav">
   <a class="brand" href="#top"><img src="assets/logo.svg" alt=""><span>RigVibe</span></a>
   <nav>
-    <a href="#funktionen">Funktionen</a>
+    <a href="#funktionen" data-en="Features">Funktionen</a>
+    <a href="#sbitx">sBitx</a>
     <a href="#quansheng">Quansheng</a>
-    <a href="#notfunk">Notfunk</a>
+    <a href="#notfunk" data-en="Emergency">Notfunk</a>
     <a href="#download" class="btn small">Download</a>
+    <span class="lang" role="group" aria-label="Sprache / Language"><button type="button" data-lang="de">DE</button><button type="button" data-lang="en">EN</button></span>
   </nav>
 </header>
 
@@ -27,13 +29,13 @@
   <section class="hero">
     <div class="hero-text">
       <h1>RigVibe</h1>
-      <p class="lead">Die Stationssoftware für Funkamateure. Funkgerät, Wasserfall, Digitalbetrieb, Logbuch, Quansheng-Handfunkgeräte und Notfunk – in einem Programm.</p>
+      <p class="lead" data-en="The station software for radio amateurs. Radio control, waterfall, digital modes, logbook, Quansheng handhelds and emergency traffic – in one program.">Die Stationssoftware für Funkamateure. Funkgerät, Wasserfall, Digitalbetrieb, Logbuch, Quansheng-Handfunkgeräte und Notfunk – in einem Programm.</p>
       <div class="actions">
-        <a class="btn" href="#download">Kostenlos herunterladen</a>
-        <a class="btn ghost" href="https://dm5mn.com/?p=190">Mehr im Blog</a>
+        <a class="btn" href="#download" data-en="Download for free">Kostenlos herunterladen</a>
+        <a class="btn ghost" href="https://dm5mn.com/?p=190" data-en="More in the blog (German)">Mehr im Blog</a>
       </div>
-      <p class="meta">Windows · Mac · Linux · Raspberry Pi · <span class="ver">Version 1.8.10</span></p>
-      <p class="alpha"><b>Alpha-Testphase:</b> RigVibe ist neu und wächst mit seinen Nutzern. Wir sind auf deine Tests und Rückmeldungen angewiesen – <a href="https://github.com/djamplifier/rigvibe/issues">Fehler melden</a> oder Mail an <a href="mailto:info@rigvibe.de">info@rigvibe.de</a>.</p>
+      <p class="meta">Windows · Mac · Linux · Raspberry Pi · sBitx · <span class="ver">Version 1.9.0</span></p>
+      <p class="alpha" data-en="&lt;b&gt;Alpha test phase:&lt;/b&gt; RigVibe is new and grows with its users. We depend on your tests and feedback – &lt;a href=&quot;https://github.com/djamplifier/rigvibe/issues&quot;&gt;report a bug&lt;/a&gt; or mail &lt;a href=&quot;mailto:info@rigvibe.de&quot;&gt;info@rigvibe.de&lt;/a&gt;."><b>Alpha-Testphase:</b> RigVibe ist neu und wächst mit seinen Nutzern. Wir sind auf deine Tests und Rückmeldungen angewiesen – <a href="https://github.com/djamplifier/rigvibe/issues">Fehler melden</a> oder Mail an <a href="mailto:info@rigvibe.de">info@rigvibe.de</a>.</p>
     </div>
     <figure class="video">
       <video controls muted preload="metadata" playsinline poster="assets/video/poster-rigvibe.jpg?v=6">
@@ -43,80 +45,118 @@
   </section>
 
   <section id="funktionen" class="block">
-    <h2>Alles für die Station</h2>
-    <p class="sub">Ein Programm statt vieler – und alles greift ineinander.</p>
+    <h2 data-en="Everything for the station">Alles für die Station</h2>
+    <p class="sub" data-en="One program instead of many – and everything works together.">Ein Programm statt vieler – und alles greift ineinander.</p>
     <div class="grid">
-      <article class="card"><img loading="lazy" src="assets/img/03-geraetesteuerung.jpg" alt="Gerätesteuerung"><h3>🎛️ Gerätesteuerung</h3><p>Frequenz, Betriebsart, Filter und Pegel für dein Funkgerät – über Hamlib, eigene SDRs oder direkt per USB.</p></article>
-      <article class="card"><img loading="lazy" src="assets/img/23-wasserfall-panadapter.jpg" alt="Wasserfall"><h3>🧭 Wasserfall und Bandplan</h3><p>Spektrum, Wasserfall (2D, 3D und beides zusammen), Bandplan und auf Wunsch Spots aus PSK Reporter. Ein Klick aufs Signal stimmt ab und wählt die Betriebsart; den Durchlassbereich ziehst du mit der Maus.</p></article>
-      <article class="card"><img loading="lazy" src="assets/img/31-rauschfilter.jpg" alt="Rauschfilter"><h3>🎧 Rauschfilter mit KI</h3><p>Störaustaster, spektrale Rauschminderung, KI-Filter und Notch – live im Empfang.</p></article>
-      <article class="card"><img loading="lazy" src="assets/img/10-digitalbetrieb.jpg" alt="Digitalbetrieb"><h3>📡 Digitalbetrieb</h3><p>FT8, FT4, JS8, PSK, RTTY, Olivia, SSTV, KG-STV, Packet, FreeDV und Digitalfunk – alles eingebaut.</p></article>
-      <article class="card"><img loading="lazy" src="assets/img/59-ft8qso.jpg" alt="FT8-QSO"><h3>⚡ FT8-QSO mit einem Klick</h3><p>Station anklicken – RigVibe ruft, antwortet und loggt. Schon gearbeitete Stationen erkennt es.</p></article>
-      <article class="card"><img loading="lazy" src="assets/img/07-logbuch.jpg" alt="Logbuch"><h3>📒 Logbuch, QSL und Contest</h3><p>LoTW, eQSL, Clublog und QRZ, eigene QSL-Karten, Contest-Modus und Papierlog.</p></article>
-      <article class="card"><img loading="lazy" src="assets/img/15-karten.jpg" alt="Karten"><h3>🌍 Karten in 3D</h3><p>Erde mit Graulinie, Spots, Satelliten, Schiffen und Wettersonden, Rotor und Peilung.</p></article>
-      <article class="card"><img loading="lazy" src="assets/img/33-handy.jpg" alt="Handy-Ansicht" class="tall"><h3>📱 Auch auf dem Handy</h3><p>Funkgerät, Wasserfall, Meshtastic, Winlink, APRS und Logbuch – von unterwegs.</p></article>
+      <article class="card"><img loading="lazy" src="assets/img/03-geraetesteuerung.jpg" alt=""><h3 data-en="🎛️ Radio control">🎛️ Gerätesteuerung</h3><p data-en="Frequency, mode, filter and levels for your radio – via Hamlib, your own SDRs or directly over USB.">Frequenz, Betriebsart, Filter und Pegel für dein Funkgerät – über Hamlib, eigene SDRs oder direkt per USB.</p></article>
+      <article class="card"><img loading="lazy" src="assets/img/23-wasserfall-panadapter.jpg" alt=""><h3 data-en="🧭 Waterfall and band plan">🧭 Wasserfall und Bandplan</h3><p data-en="Spectrum, waterfall (2D, 3D and both together), band plan and optional spots from PSK Reporter. Click a signal to tune and pick the mode; drag the passband with the mouse.">Spektrum, Wasserfall (2D, 3D und beides zusammen), Bandplan und auf Wunsch Spots aus PSK Reporter. Ein Klick aufs Signal stimmt ab und wählt die Betriebsart; den Durchlassbereich ziehst du mit der Maus.</p></article>
+      <article class="card"><img loading="lazy" src="assets/img/31-rauschfilter.jpg" alt=""><h3 data-en="🎧 AI noise reduction">🎧 Rauschfilter mit KI</h3><p data-en="Noise blanker, spectral noise reduction, AI filter and notch – live on receive.">Störaustaster, spektrale Rauschminderung, KI-Filter und Notch – live im Empfang.</p></article>
+      <article class="card"><img loading="lazy" src="assets/img/10-digitalbetrieb.jpg" alt=""><h3 data-en="📡 Digital modes">📡 Digitalbetrieb</h3><p data-en="FT8, FT4, JS8, PSK, RTTY, Olivia, SSTV, KG-STV, packet, FreeDV and digital voice – all built in.">FT8, FT4, JS8, PSK, RTTY, Olivia, SSTV, KG-STV, Packet, FreeDV und Digitalfunk – alles eingebaut.</p></article>
+      <article class="card"><img loading="lazy" src="assets/img/59-ft8qso.jpg" alt=""><h3 data-en="⚡ FT8 QSO with one click">⚡ FT8-QSO mit einem Klick</h3><p data-en="Click a station – RigVibe calls, answers and logs. It knows which stations you have already worked.">Station anklicken – RigVibe ruft, antwortet und loggt. Schon gearbeitete Stationen erkennt es.</p></article>
+      <article class="card"><img loading="lazy" src="assets/img/07-logbuch.jpg" alt=""><h3 data-en="📒 Logbook, QSL and contest">📒 Logbuch, QSL und Contest</h3><p data-en="LoTW, eQSL, Clublog and QRZ, your own QSL cards, contest mode and paper log.">LoTW, eQSL, Clublog und QRZ, eigene QSL-Karten, Contest-Modus und Papierlog.</p></article>
+      <article class="card"><img loading="lazy" src="assets/img/15-karten.jpg" alt=""><h3 data-en="🌍 Maps in 3D">🌍 Karten in 3D</h3><p data-en="Globe with grey line, spots, satellites, ships and radiosondes, rotator and bearings.">Erde mit Graulinie, Spots, Satelliten, Schiffen und Wettersonden, Rotor und Peilung.</p></article>
+      <article class="card"><img loading="lazy" src="assets/img/33-handy.jpg" alt="" class="tall"><h3 data-en="📱 On your phone too">📱 Auch auf dem Handy</h3><p data-en="Radio, waterfall, Meshtastic, Winlink, APRS and logbook – on the go.">Funkgerät, Wasserfall, Meshtastic, Winlink, APRS und Logbuch – von unterwegs.</p></article>
     </div>
     <ul class="chips">
-      <li>RTL-SDR, HackRF, Pluto, Hermes Lite 2, SoapySDR (Airspy, SDRplay, LimeSDR)</li><li>Skimmer: CW, PSK31, RTTY gleichzeitig</li><li>Wetterfax (WEFAX)</li><li>Sprachausgabe</li><li>Meshtastic</li><li>Winlink</li><li>APRS und Packet</li><li>Funkruf / DAPNET</li>
-      <li>Satelliten</li><li>Rotor</li><li>Relais, Bandscan und Suchlauf</li><li>AIS und Wettersonden</li><li>UKW-Radio mit RDS</li><li>Baken</li><li>MIDI-Pult</li><li>Prüfungstrainer</li><li>Clubtafel</li>
+      <li>RTL-SDR, HackRF, Pluto, Hermes Lite 2, SoapySDR (Airspy, SDRplay, LimeSDR)</li><li data-en="Skimmer: CW, PSK31, RTTY at once">Skimmer: CW, PSK31, RTTY gleichzeitig</li><li data-en="Weather fax (WEFAX)">Wetterfax (WEFAX)</li><li data-en="Speech output">Sprachausgabe</li><li>Meshtastic</li><li>Winlink</li><li data-en="APRS and packet">APRS und Packet</li><li data-en="Paging / DAPNET">Funkruf / DAPNET</li>
+      <li data-en="Satellites">Satelliten</li><li data-en="Rotator">Rotor</li><li data-en="Repeaters, band scan and scanner">Relais, Bandscan und Suchlauf</li><li data-en="AIS and radiosondes">AIS und Wettersonden</li><li data-en="FM radio with RDS and traffic messages">UKW-Radio mit RDS und Verkehrsmeldungen</li><li data-en="DAB+ digital radio">DAB+ Digitalradio</li><li data-en="Beacons">Baken</li><li data-en="MIDI controller">MIDI-Pult</li><li data-en="Exam trainer (German licence)">Prüfungstrainer</li><li data-en="Club board">Clubtafel</li>
     </ul>
+  </section>
+
+  <section id="sbitx" class="block split">
+    <figure><img loading="lazy" src="assets/img/90-sbitx-geraet.jpg" alt="sBitx v3 mit RigVibe" style="border-radius:14px"></figure>
+    <div>
+      <h2 data-en="The sBitx becomes a new radio">Aus dem sBitx wird ein neues Gerät</h2>
+      <p data-en="On a Raspberry Pi with a touch screen, RigVibe becomes a standalone radio – full screen, no desktop, no browser. On the &lt;b&gt;sBitx v3&lt;/b&gt; it drives the hardware itself; the sBitx software is no longer needed.">Auf einem Raspberry Pi mit Touch-Bildschirm wird RigVibe zum eigenständigen Funkgerät – im Vollbild, ohne Desktop und ohne Browser. Am <b>sBitx v3</b> steuert es die Hardware selbst; die sBitx-Software braucht es nicht mehr.</p>
+      <ul class="ticks">
+        <li data-en="Waterfall in 2D and 3D with fine zoom, AI noise reduction, both knobs">Wasserfall 2D und 3D mit feinem Zoom, KI-Rauschfilter, beide Drehknöpfe</li>
+        <li data-en="FT8/FT4/JS8 with transmit, FreeDV with RADE, decoders with maps">FT8/FT4/JS8 mit Senden, FreeDV mit RADE, Dekoder mit Karten</li>
+        <li data-en="Radio centre, a dozen device designs and your own skins">Funkzentrale, ein Dutzend Gerätedesigns und eigene Skins</li>
+        <li data-en="With a USB stick: DAB+, FM with RDS and traffic messages on a map">Mit USB-Stick: DAB+, UKW mit RDS und Verkehrsmeldungen auf der Karte</li>
+        <li data-en="Transmit is experimental and off by default">Senden experimentell und ab Werk aus</li>
+      </ul>
+      <p data-en="Install with one line (Raspberry Pi OS 64-bit):">Installation mit einer Zeile (Raspberry Pi OS 64 Bit):</p>
+      <div class="install">curl -fsSL https://rigvibe.de/install.sh | bash</div>
+      <div class="shots"><img loading="lazy" src="assets/img/91-funkzentrale.jpg" alt=""><img loading="lazy" src="assets/img/92-verkehr.jpg" alt=""></div>
+      <p style="margin-top:20px"><a class="btn ghost" href="https://dm5mn.com/?p=433" data-en="sBitx article (German)">Zum sBitx-Artikel</a></p>
+    </div>
   </section>
 
   <section id="quansheng" class="block split">
     <figure class="video"><video controls muted preload="none" playsinline poster="assets/video/poster-quansheng.jpg?v=6"><source src="assets/video/rigvibe-quansheng.mp4?v=8" type="video/mp4"></video></figure>
     <div>
       <h2>Quansheng UV-K1 und UV-K5 V3</h2>
-      <p>Mit der RigVibe-Firmware wird das Handfunkgerät zur Digitalstation – gesteuert über ein einziges USB-C-Kabel, ganz ohne Soundkarte.</p>
+      <p data-en="With the RigVibe firmware the handheld becomes a digital station – controlled over a single USB-C cable, without a sound card.">Mit der RigVibe-Firmware wird das Handfunkgerät zur Digitalstation – gesteuert über ein einziges USB-C-Kabel, ganz ohne Soundkarte.</p>
       <ul class="ticks">
-        <li>Firmware mit einem Klick aus RigVibe aufspielen</li>
-        <li>FT8, FT4, JS8, echtes CW, SSTV und KG-STV</li>
-        <li>D-STAR, DMR, YSF, M17 und Packet 9600 über USB-C</li>
-        <li>Schiffe (AIS) und Wettersonden empfangen</li>
-        <li>Relais im Umkreis, Bandscan und Suchlauf</li>
-        <li>Funkrufe an Pager und Datenfunk von Gerät zu Gerät</li>
+        <li data-en="Flash the firmware with one click from RigVibe">Firmware mit einem Klick aus RigVibe aufspielen</li>
+        <li data-en="FT8, FT4, JS8, real CW, SSTV and KG-STV">FT8, FT4, JS8, echtes CW, SSTV und KG-STV</li>
+        <li data-en="D-STAR, DMR, YSF, M17 and packet 9600 over USB-C">D-STAR, DMR, YSF, M17 und Packet 9600 über USB-C</li>
+        <li data-en="Receive ships (AIS) and radiosondes">Schiffe (AIS) und Wettersonden empfangen</li>
+        <li data-en="Nearby repeaters, band scan and scanner">Relais im Umkreis, Bandscan und Suchlauf</li>
+        <li data-en="Pages to pagers and data from radio to radio">Funkrufe an Pager und Datenfunk von Gerät zu Gerät</li>
       </ul>
-      <a class="btn ghost" href="https://dm5mn.com/?p=272">Zum Quansheng-Artikel</a>
+      <a class="btn ghost" href="https://dm5mn.com/?p=272" data-en="Quansheng article (German)">Zum Quansheng-Artikel</a>
     </div>
   </section>
 
   <section id="notfunk" class="block split rev">
     <div>
-      <h2>Notfunk</h2>
-      <p>Meldungen, Bilder und Dateien zwischen Leuchttürmen und Leitstelle – über jeden Weg, der gerade funktioniert.</p>
+      <h2 data-en="Emergency traffic">Notfunk</h2>
+      <p data-en="Messages, pictures and files between relief points and control centre – over whatever path is working.">Meldungen, Bilder und Dateien zwischen Leuchttürmen und Leitstelle – über jeden Weg, der gerade funktioniert.</p>
       <ul class="ticks">
-        <li>Netzwerk, Meshtastic, Packet, ARDOP, VARA, gesicherter Text, KG-STV/SSTV, Quansheng-Datenfunk, Funkruf und USB-Stick</li>
-        <li>Quittung für jede Meldung, Weiterleitung über Zwischenstationen</li>
-        <li>Dateien geprüft mit SHA-256, Fehlendes wird nachgefordert</li>
-        <li>Pager im Umkreis mit einem Klick alarmieren</li>
+        <li data-en="Network, Meshtastic, packet, ARDOP, VARA, secured text, KG-STV/SSTV, Quansheng data, paging and USB stick">Netzwerk, Meshtastic, Packet, ARDOP, VARA, gesicherter Text, KG-STV/SSTV, Quansheng-Datenfunk, Funkruf und USB-Stick</li>
+        <li data-en="Acknowledgement for every message, forwarding via relay stations">Quittung für jede Meldung, Weiterleitung über Zwischenstationen</li>
+        <li data-en="Files checked with SHA-256, missing parts are requested again">Dateien geprüft mit SHA-256, Fehlendes wird nachgefordert</li>
+        <li data-en="Alert nearby pagers with one click">Pager im Umkreis mit einem Klick alarmieren</li>
       </ul>
-      <a class="btn ghost" href="https://dm5mn.com/?p=289">Zum Notfunk-Artikel</a>
+      <a class="btn ghost" href="https://dm5mn.com/?p=289" data-en="Emergency article (German)">Zum Notfunk-Artikel</a>
     </div>
     <figure class="video"><video controls muted preload="none" playsinline poster="assets/video/poster-notfunk.jpg?v=6"><source src="assets/video/rigvibe-notfunk.mp4?v=6" type="video/mp4"></video></figure>
   </section>
 
   <section id="download" class="block">
     <h2>Download</h2>
-    <p class="sub">Kostenlos. <span class="ver">Version 1.8.10</span> – RigVibe meldet neue Versionen selbst.</p>
-    <p class="alpha">RigVibe befindet sich in der <b>Alpha-Testphase</b>: Es kann noch Fehler geben. Melde sie bitte direkt aus dem Programm (Hilfe → Feedback / Problem melden), als <a href="https://github.com/djamplifier/rigvibe/issues">GitHub-Issue</a> oder an <a href="mailto:info@rigvibe.de">info@rigvibe.de</a> – jede Rückmeldung hilft.</p>
+    <p class="sub"><span data-en="Free.">Kostenlos.</span> <span class="ver">Version 1.9.0</span> <span data-en="– RigVibe tells you about new versions itself.">– RigVibe meldet neue Versionen selbst.</span></p>
+    <p class="alpha" data-en="RigVibe is in its &lt;b&gt;alpha test phase&lt;/b&gt;: there may still be bugs. Please report them directly from the program (Help → Feedback / report a problem), as a &lt;a href=&quot;https://github.com/djamplifier/rigvibe/issues&quot;&gt;GitHub issue&lt;/a&gt; or to &lt;a href=&quot;mailto:info@rigvibe.de&quot;&gt;info@rigvibe.de&lt;/a&gt; – every report helps.">RigVibe befindet sich in der <b>Alpha-Testphase</b>: Es kann noch Fehler geben. Melde sie bitte direkt aus dem Programm (Hilfe → Feedback / Problem melden), als <a href="https://github.com/djamplifier/rigvibe/issues">GitHub-Issue</a> oder an <a href="mailto:info@rigvibe.de">info@rigvibe.de</a> – jede Rückmeldung hilft.</p>
     <div class="dl">
-      <a data-asset="Windows-Setup.exe" href="https://github.com/djamplifier/rigvibe/releases/download/v1.8.10/RigVibe-1.8.10-Windows-Setup.exe"><b>Windows 10/11</b><span>Installationsprogramm</span></a>
-      <a data-asset="Mac-AppleSilicon.dmg" href="https://github.com/djamplifier/rigvibe/releases/download/v1.8.10/RigVibe-1.8.10-Mac-AppleSilicon.dmg"><b>Mac mit Apple-Chip</b><span>M1 bis M4</span></a>
-      <a data-asset="Mac-Intel.dmg" href="https://github.com/djamplifier/rigvibe/releases/download/v1.8.10/RigVibe-1.8.10-Mac-Intel.dmg"><b>Mac mit Intel-Chip</b><span>Disk-Image</span></a>
-      <a data-asset="Linux.AppImage" href="https://github.com/djamplifier/rigvibe/releases/download/v1.8.10/RigVibe-1.8.10-Linux.AppImage"><b>Linux</b><span>AppImage, alle Distributionen</span></a>
-      <a data-asset="amd64.deb" href="https://github.com/djamplifier/rigvibe/releases/download/v1.8.10/rigvibe_1.8.10_amd64.deb"><b>Debian/Ubuntu</b><span>.deb-Paket</span></a>
-      <a data-asset="Raspberry-Pi-ARM64.AppImage" href="https://github.com/djamplifier/rigvibe/releases/download/v1.8.10/RigVibe-1.8.10-Raspberry-Pi-ARM64.AppImage"><b>Raspberry Pi</b><span>AppImage, ARM64 (64-Bit-System)</span></a>
-      <a data-asset="Linux-ARM64-Server.tar.gz" href="https://github.com/djamplifier/rigvibe/releases/download/v1.8.10/RigVibe-1.8.10-Linux-ARM64-Server.tar.gz"><b>Raspberry Pi als Server</b><span>Dienst, ARM64</span></a>
-      <a data-asset="Linux-Server.tar.gz" href="https://github.com/djamplifier/rigvibe/releases/download/v1.8.10/RigVibe-1.8.10-Linux-Server.tar.gz"><b>Linux-Server</b><span>Dienst für den Heimserver</span></a>
+      <a data-asset="Windows-Setup.exe" href="https://github.com/djamplifier/rigvibe/releases/download/v1.9.0/RigVibe-1.9.0-Windows-Setup.exe"><b>Windows 10/11</b><span data-en="Installer">Installationsprogramm</span></a>
+      <a data-asset="Mac-AppleSilicon.dmg" href="https://github.com/djamplifier/rigvibe/releases/download/v1.9.0/RigVibe-1.9.0-Mac-AppleSilicon.dmg"><b data-en="Mac with Apple chip">Mac mit Apple-Chip</b><span data-en="M1 to M4">M1 bis M4</span></a>
+      <a data-asset="Mac-Intel.dmg" href="https://github.com/djamplifier/rigvibe/releases/download/v1.9.0/RigVibe-1.9.0-Mac-Intel.dmg"><b data-en="Mac with Intel chip">Mac mit Intel-Chip</b><span>Disk-Image</span></a>
+      <a data-asset="Linux.AppImage" href="https://github.com/djamplifier/rigvibe/releases/download/v1.9.0/RigVibe-1.9.0-Linux.AppImage"><b>Linux</b><span data-en="AppImage, all distributions">AppImage, alle Distributionen</span></a>
+      <a data-asset="amd64.deb" href="https://github.com/djamplifier/rigvibe/releases/download/v1.9.0/rigvibe_1.9.0_amd64.deb"><b>Debian/Ubuntu</b><span data-en=".deb package">.deb-Paket</span></a>
+      <a data-asset="Raspberry-Pi-ARM64.AppImage" href="https://github.com/djamplifier/rigvibe/releases/download/v1.9.0/RigVibe-1.9.0-Raspberry-Pi-ARM64.AppImage"><b>Raspberry Pi</b><span data-en="AppImage, ARM64 (64-bit system)">AppImage, ARM64 (64-Bit-System)</span></a>
+      <a href="#sbitx"><b data-en="Raspberry Pi / sBitx as a radio">Raspberry Pi / sBitx als Gerät</b><span data-en="Touch UI, install script">Touch-Oberfläche, Installationsskript</span></a>
+      <a data-asset="Linux-ARM64-Server.tar.gz" href="https://github.com/djamplifier/rigvibe/releases/download/v1.9.0/RigVibe-1.9.0-Linux-ARM64-Server.tar.gz"><b data-en="Raspberry Pi as a server">Raspberry Pi als Server</b><span data-en="Service, ARM64">Dienst, ARM64</span></a>
+      <a data-asset="Linux-Server.tar.gz" href="https://github.com/djamplifier/rigvibe/releases/download/v1.9.0/RigVibe-1.9.0-Linux-Server.tar.gz"><b>Linux-Server</b><span data-en="Service for a home server">Dienst für den Heimserver</span></a>
     </div>
-    <p class="sub small">Anleitung: <a href="https://github.com/djamplifier/rigvibe/blob/main/docs/Anleitung.md">Deutsch</a> · <a href="https://github.com/djamplifier/rigvibe/blob/main/docs/Manual.md">English</a> · Fehler oder Wünsche: <a href="https://github.com/djamplifier/rigvibe/issues">GitHub-Issues</a></p>
+    <p class="sub small"><span data-en="Manual:">Anleitung:</span> <a href="https://github.com/djamplifier/rigvibe/blob/main/docs/Anleitung.md">Deutsch</a> · <a href="https://github.com/djamplifier/rigvibe/blob/main/docs/Manual.md">English</a> · <span data-en="Bugs or wishes:">Fehler oder Wünsche:</span> <a href="https://github.com/djamplifier/rigvibe/issues" data-en="GitHub issues">GitHub-Issues</a></p>
   </section>
 </main>
 
 <footer>
   <div>© Marcus Adena, DM5MN · 73!</div>
-  <div><a href="https://dm5mn.com">Blog dm5mn.com</a> · <a href="https://dm5mn.com/?page_id=118">Impressum</a> · <a href="datenschutz.html">Datenschutz</a></div>
+  <div><a href="https://dm5mn.com">Blog dm5mn.com</a> · <a href="https://dm5mn.com/?page_id=118" data-en="Imprint">Impressum</a> · <a href="datenschutz.html" data-en="Privacy">Datenschutz</a></div>
 </footer>
 
 <script>
+// Sprache: gemerkte Wahl, sonst die Browsersprache (Deutsch fuer de-*, sonst Englisch). Kein Abruf bei Dritten.
+(() => {
+  const els = [...document.querySelectorAll("[data-en]")];
+  els.forEach(e => { e.dataset.de = e.tagName === "TITLE" ? e.textContent : e.innerHTML; });
+  const meta = document.querySelector('meta[name="description"]'); meta.dataset.de = meta.content;
+  let saved = null; try { saved = localStorage.getItem("rv-lang"); } catch (e) {}
+  const auto = (navigator.languages || [navigator.language || "de"]).some(l => /^de\b/i.test(l)) ? "de" : "en";
+  const set = (lang, keep) => {
+    document.documentElement.lang = lang;
+    els.forEach(e => { const t = lang === "en" ? e.dataset.en : e.dataset.de; if (e.tagName === "TITLE") e.textContent = t; else e.innerHTML = t; });
+    meta.content = lang === "en" ? meta.dataset.enContent : meta.dataset.de;
+    document.querySelectorAll(".lang button").forEach(b => b.classList.toggle("on", b.dataset.lang === lang));
+    if (keep) { try { localStorage.setItem("rv-lang", lang); } catch (e) {} }
+  };
+  document.querySelectorAll(".lang button").forEach(b => b.onclick = () => set(b.dataset.lang, true));
+  set(saved === "de" || saved === "en" ? saved : auto, false);
+})();
+
 // Downloads auf die neueste Version stellen (ohne Erfolg bleiben die festen Links)
 fetch("https://api.github.com/repos/djamplifier/rigvibe/releases/latest").then(r => r.ok ? r.json() : null).then(rel => {
   if (!rel || !rel.assets) return;
@@ -133,9 +173,11 @@ fetch("https://api.github.com/repos/djamplifier/rigvibe/releases/latest").then(r
 (() => {
   const vids = [...document.querySelectorAll("figure.video video")];
   const still = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const en = () => document.documentElement.lang === "en";
   vids.forEach(v => {
     const b = document.createElement("button");
-    b.className = "unmute"; b.type = "button"; b.textContent = "🔊 Ton an";
+    b.className = "unmute"; b.type = "button"; b.textContent = en() ? "🔊 Sound on" : "🔊 Ton an";
+    document.querySelectorAll(".lang button").forEach(x => x.addEventListener("click", () => { b.textContent = en() ? "🔊 Sound on" : "🔊 Ton an"; }));
     v.parentElement.appendChild(b);
     b.onclick = () => {
       vids.forEach(o => { if (o !== v) o.pause(); });
