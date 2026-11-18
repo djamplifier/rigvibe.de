@@ -64,7 +64,7 @@
   </section>
 
   <section id="sbitx" class="block split">
-    <figure><img loading="lazy" src="assets/img/90-sbitx-geraet.jpg" alt="sBitx v3 mit RigVibe" style="border-radius:14px"></figure>
+    <figure class="video"><video controls muted preload="none" playsinline poster="assets/video/poster-sbitx-de.jpg?v=1" data-poster-en="assets/video/poster-sbitx-en.jpg?v=1" data-src-en="assets/video/rigvibe-sbitx-en.mp4?v=1"><source src="assets/video/rigvibe-sbitx-de.mp4?v=1" type="video/mp4"></video></figure>
     <div>
       <h2 data-en="The sBitx becomes a new radio">Aus dem sBitx wird ein neues Gerät</h2>
       <p data-en="On a Raspberry Pi with a touch screen, RigVibe becomes a standalone radio – full screen, no desktop, no browser. On the &lt;b&gt;sBitx v3&lt;/b&gt; it drives the hardware itself; the sBitx software is no longer needed.">Auf einem Raspberry Pi mit Touch-Bildschirm wird RigVibe zum eigenständigen Funkgerät – im Vollbild, ohne Desktop und ohne Browser. Am <b>sBitx v3</b> steuert es die Hardware selbst; die sBitx-Software braucht es nicht mehr.</p>
@@ -138,7 +138,7 @@
   <div><a href="https://dm5mn.com">Blog dm5mn.com</a> · <a href="https://dm5mn.com/?page_id=118" data-en="Legal notice">Impressum</a> · <a href="datenschutz.html" data-en="Privacy">Datenschutz</a></div>
 </footer>
 
-<script src="assets/lang.js?v=1"></script>
+<script src="assets/lang.js?v=2"></script>
 <script>// Downloads auf die neueste Version stellen (ohne Erfolg bleiben die festen Links)
 fetch("https://api.github.com/repos/djamplifier/rigvibe/releases/latest").then(r => r.ok ? r.json() : null).then(rel => {
   if (!rel || !rel.assets) return;
