@@ -32,7 +32,7 @@
       <p class="lead" data-en="The station software for radio amateurs. Radio control, waterfall, digital modes, logbook, Quansheng handhelds and emergency traffic – in one program.">Die Stationssoftware für Funkamateure. Funkgerät, Wasserfall, Digitalbetrieb, Logbuch, Quansheng-Handfunkgeräte und Notfunk – in einem Programm.</p>
       <div class="actions">
         <a class="btn" href="#download" data-en="Download for free">Kostenlos herunterladen</a>
-        <a class="btn ghost" href="https://dm5mn.com/?p=190" data-en="More in the blog (German)">Mehr im Blog</a>
+        <a class="btn ghost" href="https://dm5mn.com/?p=190" data-en="More in the blog">Mehr im Blog</a>
       </div>
       <p class="meta">Windows · Mac · Linux · Raspberry Pi · sBitx · <span class="ver">Version 1.9.0</span></p>
       <p class="alpha" data-en="&lt;b&gt;Alpha test phase:&lt;/b&gt; RigVibe is new and grows with its users. We depend on your tests and feedback – &lt;a href=&quot;https://github.com/djamplifier/rigvibe/issues&quot;&gt;report a bug&lt;/a&gt; or mail &lt;a href=&quot;mailto:info@rigvibe.de&quot;&gt;info@rigvibe.de&lt;/a&gt;."><b>Alpha-Testphase:</b> RigVibe ist neu und wächst mit seinen Nutzern. Wir sind auf deine Tests und Rückmeldungen angewiesen – <a href="https://github.com/djamplifier/rigvibe/issues">Fehler melden</a> oder Mail an <a href="mailto:info@rigvibe.de">info@rigvibe.de</a>.</p>
@@ -78,14 +78,14 @@
       <p data-en="Install with one line (Raspberry Pi OS 64-bit):">Installation mit einer Zeile (Raspberry Pi OS 64 Bit):</p>
       <div class="install">curl -fsSL https://rigvibe.de/install.sh | bash</div>
       <div class="shots"><img loading="lazy" src="assets/img/91-funkzentrale.jpg" alt=""><img loading="lazy" src="assets/img/92-verkehr.jpg" alt=""></div>
-      <p style="margin-top:20px"><a class="btn ghost" href="https://dm5mn.com/?p=433" data-en="sBitx article (German)">Zum sBitx-Artikel</a></p>
+      <p style="margin-top:20px"><a class="btn ghost" href="https://dm5mn.com/?p=433" data-en="sBitx article">Zum sBitx-Artikel</a></p>
     </div>
   </section>
 
   <section id="quansheng" class="block split">
     <figure class="video"><video controls muted preload="none" playsinline poster="assets/video/poster-quansheng.jpg?v=6"><source src="assets/video/rigvibe-quansheng.mp4?v=8" type="video/mp4"></video></figure>
     <div>
-      <h2>Quansheng UV-K1 und UV-K5 V3</h2>
+      <h2 data-en="Quansheng UV-K1 and UV-K5 V3">Quansheng UV-K1 und UV-K5 V3</h2>
       <p data-en="With the RigVibe firmware the handheld becomes a digital station – controlled over a single USB-C cable, without a sound card.">Mit der RigVibe-Firmware wird das Handfunkgerät zur Digitalstation – gesteuert über ein einziges USB-C-Kabel, ganz ohne Soundkarte.</p>
       <ul class="ticks">
         <li data-en="Flash the firmware with one click from RigVibe">Firmware mit einem Klick aus RigVibe aufspielen</li>
@@ -95,7 +95,7 @@
         <li data-en="Nearby repeaters, band scan and scanner">Relais im Umkreis, Bandscan und Suchlauf</li>
         <li data-en="Pages to pagers and data from radio to radio">Funkrufe an Pager und Datenfunk von Gerät zu Gerät</li>
       </ul>
-      <a class="btn ghost" href="https://dm5mn.com/?p=272" data-en="Quansheng article (German)">Zum Quansheng-Artikel</a>
+      <a class="btn ghost" href="https://dm5mn.com/?p=272" data-en="Quansheng article">Zum Quansheng-Artikel</a>
     </div>
   </section>
 
@@ -109,7 +109,7 @@
         <li data-en="Files checked with SHA-256, missing parts are requested again">Dateien geprüft mit SHA-256, Fehlendes wird nachgefordert</li>
         <li data-en="Alert nearby pagers with one click">Pager im Umkreis mit einem Klick alarmieren</li>
       </ul>
-      <a class="btn ghost" href="https://dm5mn.com/?p=289" data-en="Emergency article (German)">Zum Notfunk-Artikel</a>
+      <a class="btn ghost" href="https://dm5mn.com/?p=289" data-en="Emergency article">Zum Notfunk-Artikel</a>
     </div>
     <figure class="video"><video controls muted preload="none" playsinline poster="assets/video/poster-notfunk.jpg?v=6"><source src="assets/video/rigvibe-notfunk.mp4?v=6" type="video/mp4"></video></figure>
   </section>
@@ -135,29 +135,11 @@
 
 <footer>
   <div>© Marcus Adena, DM5MN · 73!</div>
-  <div><a href="https://dm5mn.com">Blog dm5mn.com</a> · <a href="https://dm5mn.com/?page_id=118" data-en="Imprint">Impressum</a> · <a href="datenschutz.html" data-en="Privacy">Datenschutz</a></div>
+  <div><a href="https://dm5mn.com">Blog dm5mn.com</a> · <a href="https://dm5mn.com/?page_id=118" data-en="Legal notice">Impressum</a> · <a href="datenschutz.html" data-en="Privacy">Datenschutz</a></div>
 </footer>
 
-<script>
-// Sprache: gemerkte Wahl, sonst die Browsersprache (Deutsch fuer de-*, sonst Englisch). Kein Abruf bei Dritten.
-(() => {
-  const els = [...document.querySelectorAll("[data-en]")];
-  els.forEach(e => { e.dataset.de = e.tagName === "TITLE" ? e.textContent : e.innerHTML; });
-  const meta = document.querySelector('meta[name="description"]'); meta.dataset.de = meta.content;
-  let saved = null; try { saved = localStorage.getItem("rv-lang"); } catch (e) {}
-  const auto = (navigator.languages || [navigator.language || "de"]).some(l => /^de\b/i.test(l)) ? "de" : "en";
-  const set = (lang, keep) => {
-    document.documentElement.lang = lang;
-    els.forEach(e => { const t = lang === "en" ? e.dataset.en : e.dataset.de; if (e.tagName === "TITLE") e.textContent = t; else e.innerHTML = t; });
-    meta.content = lang === "en" ? meta.dataset.enContent : meta.dataset.de;
-    document.querySelectorAll(".lang button").forEach(b => b.classList.toggle("on", b.dataset.lang === lang));
-    if (keep) { try { localStorage.setItem("rv-lang", lang); } catch (e) {} }
-  };
-  document.querySelectorAll(".lang button").forEach(b => b.onclick = () => set(b.dataset.lang, true));
-  set(saved === "de" || saved === "en" ? saved : auto, false);
-})();
-
-// Downloads auf die neueste Version stellen (ohne Erfolg bleiben die festen Links)
+<script src="assets/lang.js?v=1"></script>
+<script>// Downloads auf die neueste Version stellen (ohne Erfolg bleiben die festen Links)
 fetch("https://api.github.com/repos/djamplifier/rigvibe/releases/latest").then(r => r.ok ? r.json() : null).then(rel => {
   if (!rel || !rel.assets) return;
   const v = (rel.tag_name || "").replace(/^v/, "");
