@@ -60,7 +60,7 @@ h2 { font-size: clamp(32px, 4vw, 48px); margin: 0 0 10px; letter-spacing: -.5px;
 
 .split { display: grid; grid-template-columns: 1.2fr 1fr; gap: clamp(24px, 4vw, 56px); align-items: center; }
 .split.rev { grid-template-columns: 1fr 1.2fr; }
-#quansheng h2 { color: var(--cyan); }
+#quansheng h2, #firmware h2 { color: var(--cyan); }
 #notfunk h2 { color: var(--orange); }
 #notfunk .btn.ghost { color: var(--orange) !important; border-color: var(--orange); }
 #quansheng .btn.ghost { color: var(--cyan) !important; border-color: var(--cyan); }
